@@ -1,21 +1,31 @@
 const cursorTrack = document.getElementById('image-track')
-const value = cursorTrack.dataset.cursorDownat;
+let atDownValue = cursorTrack.dataset.cursorDownAt;
+let prevValue = cursorTrack.dataset.lastMove;
+let readyValue = cursorTrack.dataset.percentage;
 
 
 window.onmousedown = cursor => {
-    value =  cursor.clientX;
+    atDownValue =  cursor.clientX;
 }
+
 
 window.onmousemove = cursor => {
 
-    if (value === "0") return;
+    if (atDownValue === "0") return;
 
-    const cursorChange = (parseFloat(value) - cursor.clientX), maxValue = (window.innerWidth / 2), percent = (cursorChange / maxValue) * 100;
+    const cursorChange = (parseFloat(atDownValue) - cursor.clientX), maxValue = (window.innerWidth / 2), percent = (cursorChange / maxValue) * -100, nextPercent = parseFloat(prevValue) + percent;
 
-    cursorTrack.style.transform = `translate(${percent}%, -30%)`;
+    readyValue = nextPercent;
+
+    cursorTrack.style.transform = `translate(${nextPercent}%, -30%)`;
+
+    if (nextPercent = maxValue) {
+        alert("reached the end")
+    }
 
 }
 
 window.onmouseup = () => {
-    value = "0";
+    atDownValue = "0";
+    prevValue = readyValue;
 }

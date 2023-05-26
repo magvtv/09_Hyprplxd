@@ -1,0 +1,1 @@
+thinking of making the slider draggable not necessarily using onmousedown but onhover

@@ -8,6 +8,8 @@ body {
 }
 
 #image-track {
+    border: 1px solid green;
+    padding: .1875em;
     display: flex;
     gap: 5vmin;
     position: absolute;
@@ -18,8 +20,8 @@ body {
 }
 
 #image-track > .photo {
-    width: 40vmin;
-    height: 60vmin;
+    width: 30vmin;
+    height: 50vmin;
     object-fit: cover;
     object-position: center;
     border-radius: .5em;
