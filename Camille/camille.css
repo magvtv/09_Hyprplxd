@@ -8,24 +8,23 @@ body {
 }
 
 #image-track {
-    border: 1px solid green;
-    padding: .1875em;
+    padding: .875em;
     display: flex;
     gap: 5vmin;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(0%, -30%);
+    transform: translate(0%, -50%);
 
 }
 
 #image-track > .photo {
-    width: 30vmin;
-    height: 50vmin;
+    width: 45vmin;
+    height: 67.5vmin;
     object-fit: cover;
     object-position: center;
     border-radius: .5em;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    border: .125em solid rgb(102, 224, 228);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    /* border: .125em solid rgb(102, 224, 228); */
 }
 
