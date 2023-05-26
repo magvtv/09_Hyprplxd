@@ -4,6 +4,7 @@ body {
     background-color: rgb(31, 27, 27);
     margin: 0;
     overflow: hidden;
+    cursor: pointer;
 }
 
 #image-track {
@@ -21,5 +22,8 @@ body {
     height: 60vmin;
     object-fit: cover;
     object-position: center;
+    border-radius: .5em;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    border: .125em solid rgb(102, 224, 228);
 }
 
