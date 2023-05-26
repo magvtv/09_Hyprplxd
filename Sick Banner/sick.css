@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap');
+
+:root {
+    --red: rgb(173, 11, 19);
+    --yellow: rgb(218, 164, 27);
+    --black: rgba(0, 0, 0);
+    --purple: rgba(95, 0, 95);
+    --font: 'Cabin', 'sans-serif';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(3, 8, 8) */
+}
+
+#lft {
+    background: var(--yellow);
+    z-index: 2;
+}
+
+#lft .fancy {
+    color: aqua;
+    font-style: italic;
+}
+
+#rht {
+    background: var(--purple);
+    color: white;
+}
+
+#rht .fancy {
+    color: white;
+    font-style: italic;
+}
+
+.half .text {
+    color: var(--black);
+    font-family: var(--font);
+    font-size: 8vw;
+    margin: 0 15vw;
+    width: 70vw;
+    cursor: pointer;
+}
+
+.half {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    position: absolute;
+}
+
+.text .fancy {
+    font-family: var(--font);
+    font-size: 1.5em;
+    line-height: .8em;
+}
