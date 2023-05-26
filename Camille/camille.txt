@@ -1,0 +1,1 @@
+thinking of making the slider draggable not necessarily using onmousedown but onhover on the image slider. simply put i would like to make the slider slide without really pressing the mouse down.
