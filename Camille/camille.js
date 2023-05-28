@@ -25,7 +25,8 @@ window.onmousemove = cursor => {
     });
 }
 
-for(const photo of cursorTrack.getElementsByClassName("photo")) {
+for (const photo of cursorTrack.getElementsByClassName("photo")) {
+    // photo.style.objectPosition = `${nextPercent + 100} 50%`
     photo.animate({
         objectPosition: `${100 + nextPercent}% center`
     }, {
@@ -37,5 +38,3 @@ window.onmouseup = () => {
     atDownValue = "0";
     prevValue = readyValue;
 }
-Math.min(nextPercent, 0); 
-Math.max(nextPercent, -100);
