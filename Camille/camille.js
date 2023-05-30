@@ -28,7 +28,7 @@ window.onmousemove = cursor => {
 for (const photo of cursorTrack.getElementsByClassName("photo")) {
     // photo.style.objectPosition = `${nextPercent + 100} 50%`
     photo.animate({
-        objectPosition: `${100 + nextPercent}% center`
+        objectPosition: `${nextPercent}% center`
     }, {
     duration: 1500, fill: "forwards"     
     });
