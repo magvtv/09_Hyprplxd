@@ -27,7 +27,7 @@ nav {
     justify-content: space-between;
 }
 
-#nav-link > a {
+#nav-link>a {
     font-size: 1.25em;
     text-transform: lowercase;
     text-decoration: none;
@@ -42,7 +42,8 @@ nav>.nav-section {
     flex-grow: 1;
 }
 
-nav > #nav-link, #nav-social {
+nav>#nav-link,
+#nav-social {
     align-items: center;
     justify-content: center;
 }
@@ -73,7 +74,7 @@ nav > #nav-link, #nav-social {
     justify-content: flex-start;
 }
 
-#nav-logo > a > i {
+#nav-logo>a>i {
     font-size: 1.25em;
     color: var(--icon-color);
 }
@@ -83,3 +84,60 @@ nav > #nav-link, #nav-social {
     transform: scale(1.3);
     transition-duration: 350ms;
 }
+
+main {
+    flex-grow: 1;
+}
+
+main>article {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 3.08fr 1fr;
+    grid-template-rows: 3.08fr 1fr;
+}
+
+main>article>.article {
+    height: 100%;
+    border: 1px solid var(--border-color);
+}
+
+main>article>.detail-section,
+main>article>.nav-section {
+    /* border-left: 1px solid var(--border-color); */
+}
+
+main>article>.title-section,  main>article>.nav-section {
+   /* border-top: 1px solid var(--border-color); */
+}
+
+.image-section {
+    background-image: url(https://rb.gy/jv8jh);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title-section > h2 {
+    text-transform: capitalize;
+    font-size: 3.75em;
+    padding: .15em .25em;
+    text-align: center;
+}
+
+.detail-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5em 1em;
+}
+
+.detail-section > p {
+    font-size: 1.2em;
+}
+
+
