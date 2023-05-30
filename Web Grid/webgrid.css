@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+/* sacramento font style */
+/* @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap'); */
+
+/* tsukimi rounded */
+@import url('https://fonts.googleapis.com/css2?family=Tsukimi+Rounded:wght@300;500;700&display=swap');
+
 
 :root {
     --background-color: burlywood;
@@ -7,7 +12,7 @@
 }
 
 * {
-    font-family: 'Sacramento', cursive;
+    font-family: 'Tsukimi Rounded', sans-serif;
     box-sizing: border-box;
 }
 
@@ -28,7 +33,7 @@ nav {
 }
 
 #nav-link>a {
-    font-size: 1.25em;
+    font-size: .9em;
     text-transform: lowercase;
     text-decoration: none;
     color: var(--icon-color)
@@ -86,14 +91,27 @@ nav>#nav-link,
 }
 
 main {
+    position: relative;
     flex-grow: 1;
 }
 
+
 main>article {
+    position: absolute;
     display: grid;
     height: 100%;
     grid-template-columns: 3.08fr 1fr;
     grid-template-rows: 3.08fr 1fr;
+    left: 0;
+    top: 0;
+}
+
+main> article[data-status="off"] {
+    transform: translateX(-100%);
+}
+
+main> article[data-status="after"] {
+    transform: translateX(50%) scale(0)
 }
 
 main>article>.article {
@@ -106,8 +124,9 @@ main>article>.nav-section {
     /* border-left: 1px solid var(--border-color); */
 }
 
-main>article>.title-section,  main>article>.nav-section {
-   /* border-top: 1px solid var(--border-color); */
+main>article>.title-section,
+main>article>.nav-section {
+    /* border-top: 1px solid var(--border-color); */
 }
 
 .image-section {
@@ -122,9 +141,10 @@ main>article>.title-section,  main>article>.nav-section {
     align-items: center;
     justify-content: center;
 }
-.title-section > h2 {
+
+.title-section>h2 {
     text-transform: capitalize;
-    font-size: 3.75em;
+    font-size: 2.75em;
     padding: .15em .25em;
     text-align: center;
 }
@@ -136,8 +156,26 @@ main>article>.title-section,  main>article>.nav-section {
     padding: .5em 1em;
 }
 
-.detail-section > p {
-    font-size: 1.2em;
+.detail-section>p {
+    font-size: .85em;
 }
 
+.article-nav-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
+.article-nav-section>i {
+    color: var(--icon-color);
+    font-size: 3.75em;
+    transition: ease;
+    cursor: pointer;
+    transition-duration: 250ms;
+}
+
+.article-nav-section>i:hover {
+    /* transform: perspective(62.5em) rotate(90deg); */
+    transform: scale(.75);
+    color: rgb(0, 0, 0);
+}
