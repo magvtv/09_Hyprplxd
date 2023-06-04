@@ -119,15 +119,6 @@ main>article>.article {
     border: 1px solid var(--border-color);
 }
 
-main>article>.detail-section,
-main>article>.nav-section {
-    /* border-left: 1px solid var(--border-color); */
-}
-
-main>article>.title-section,
-main>article>.nav-section {
-    /* border-top: 1px solid var(--border-color); */
-}
 
 .image-section {
     background-image: url(https://rb.gy/jv8jh);
@@ -158,6 +149,7 @@ main>article>.nav-section {
 
 .detail-section>p {
     font-size: .85em;
+    text-transform: capitalize;
 }
 
 .article-nav-section {

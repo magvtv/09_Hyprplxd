@@ -17,11 +17,11 @@ const handleRightClick = () => {
 
 const handleLeftClick = () => {
     // decrease the current index by 1, moving the article leftwards
-    const prevIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : totalArticles - 1;
+    const prevIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : totalArticles;
     const currentArticle = document.querySelector(`[data-index="${activeIndex}"]`), prevArticle = document.querySelector(`[data-index="${prevIndex}"]`);
 
     // active article becomes new 'after'
-    currentArticle.dataset.status = "before";
+    currentArticle.dataset.status = "after";
 
     // previous article comes on-screen (active)
     prevArticle.dataset.status = "on";
