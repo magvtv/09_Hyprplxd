@@ -1,0 +1,19 @@
+:root {
+    --border-color: rgb(20, 20, 10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    place-items: center;
+}
+
+.card {
+    aspect-ratio: 1 / 1.5;
+    border: .5vmin solid var(--border-color);
+    width: 56vmin;
+    cursor: pointer;
+    position: relative;
+
+}
