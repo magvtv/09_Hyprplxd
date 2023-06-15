@@ -45,7 +45,10 @@
 
 .card:hover::before {
     background-position: 100% 100%;
-    transform: scale(1.075, 1.025);
+}
+
+.card:hover > .card-content {
+    background-position: -15% 0;
 }
 
 .card-content {
@@ -57,4 +60,5 @@
     );
     background-position: 0 0;
     background-size: 3.48vmin 3vmin;
+    transition: background-position 350ms ease;
 }
