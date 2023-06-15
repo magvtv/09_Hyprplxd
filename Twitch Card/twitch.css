@@ -48,4 +48,13 @@
     transform: scale(1.075, 1.025);
 }
 
-.card-content
+.card-content {
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(
+        rgb(201, 201, 201) 6%,
+        transparent 6%
+    );
+    background-position: 0 0;
+    background-size: 3.48vmin 3vmin;
+}
