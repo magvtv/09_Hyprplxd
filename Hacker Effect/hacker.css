@@ -11,6 +11,8 @@ h1 {
     text-transform: uppercase;
     cursor: pointer;
     text-align: center;
-    /* padding: 0 5vh; */
-    margin: 2vw 5vw;
+    padding: 0 5vh;
+    /* margin: 2vw 5vw; */
+    top: -50%;
+    margin-bottom: auto;
 }
