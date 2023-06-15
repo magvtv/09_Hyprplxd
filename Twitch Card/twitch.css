@@ -1,5 +1,8 @@
 :root {
-    --border-color: rgb(20, 20, 10);
+    --border-color: rgb(177, 177, 177);
+    --gradient-1: rgb(70, 141, 60);
+    --gradient-2: rgb(214, 218, 29);
+    --gradient-3: rgb(17, 214, 181);
 }
 
 * {
@@ -7,13 +10,29 @@
     padding: 0;
     box-sizing: border-box;
     place-items: center;
+    background-color: rgb(12, 12, 12);
 }
 
 .card {
-    aspect-ratio: 1 / 1.5;
+    aspect-ratio: 2 / 3;
     border: .5vmin solid var(--border-color);
     width: 56vmin;
     cursor: pointer;
     position: relative;
+}
 
+.card:before {
+    background: linear-gradient(
+        120deg, 
+        transparent 0 33%,
+        var(--gradient-1) 66%,
+        var(--gradient-2) 76.5%,
+        var(--gradient-3) 99%
+    );
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
