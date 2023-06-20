@@ -43,3 +43,22 @@
 // word = doStep2(word)
 // word = doStep3(word)
 // console.log(word)
+
+const firstWord = (initial, callback) => {
+    const word = `${initial}, PH`;
+    callback(word);
+}
+const secondWord = (initial, callback) => {
+    const word = `${initial}. Welcome`;
+    callback(word);
+}
+
+const thirdWord = (initial, callback) => {
+    const word = `${initial} Home.`;
+    callback(word);
+}
+
+function doEverything() {
+    first
+}
+
