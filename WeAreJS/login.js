@@ -59,6 +59,13 @@ const thirdWord = (initial, callback) => {
 }
 
 function doEverything() {
-    first
+    firstWord("Hello", word1 => {
+        secondWord(word1, word2 => {
+            thirdWord(word2, word3  => {
+                console.log(`${word3}`)
+            });
+        });
+    });
 }
 
+doEverything()
