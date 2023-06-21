@@ -76,7 +76,10 @@ const pataAhadi = fetch(
 )
 
 pataAhadi.then((res) => {
-    console.log("Is this what you promised: " + " " + `${res.text}`)
+    const textPromise = res.text
+    textPromise.then((data) => {
+        console.log(data[0].text)
+    })
 })
 // console.log(pataAhadi)
 console.log(pataAhadi)
