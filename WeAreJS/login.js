@@ -72,7 +72,7 @@
 
 console.log("Getting what you said...")
 const pataAhadi = fetch(
-    console.log("Hii ndio ulikuwa umepromise saa zile")
+    console.log("Some randomly made promise")
 )
 
 pataAhadi.then((res) => {
