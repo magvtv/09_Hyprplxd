@@ -70,8 +70,13 @@
 
 // doEverything()
 
+console.log("Getting what you said...")
 const pataAhadi = fetch(
     console.log("Hii ndio ulikuwa umepromise saa zile")
 )
 
+pataAhadi.then((res) => {
+    console.log("Is this what you promised: " + " " + `${res.text}`)
+})
+// console.log(pataAhadi)
 console.log(pataAhadi)
