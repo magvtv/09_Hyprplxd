@@ -68,4 +68,10 @@
 //     });
 // }
 
-doEverything()
+// doEverything()
+
+const pataAhadi = fetch(
+    console.log("Hii ndio ulikuwa umepromise saa zile")
+)
+
+console.log(pataAhadi)
