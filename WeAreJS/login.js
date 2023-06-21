@@ -70,16 +70,25 @@
 
 // doEverything()
 
-console.log("Getting what you said...")
+// console.log("Getting what you said...")
 const pataAhadi = fetch(
     console.log("Some randomly made promise")
 )
 
 pataAhadi.then((res) => {
-    const textPromise = res.text
-    textPromise.then((data) => {
-        console.log(data[0].text)
-    })
+
+    if (!res.ok) {
+        throw new Error(`Supressed default response errors! ${res.status}` )
+    }
+    else if (TypeError){
+        throw new TypeError(`Bad things are happening ${res.status}`)
+    }
+    else {
+        const textPromise = res.text
+        textPromise.then((data) => {
+            console.log(data)
+        })
+    }
 })
 // console.log(pataAhadi)
 console.log(pataAhadi)
