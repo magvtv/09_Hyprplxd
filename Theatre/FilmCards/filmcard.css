@@ -30,11 +30,11 @@
 
 .film__card {
     border: 2px solid red;
-	/* top: 50%; */
-	/* left: 50%; */
+	top: 50%;
+	left: 50%;
     width: 20rem;
     flex-shrink: 0;
-	/* flex: 0 0 100%; */
+	flex: 0 0 100%;
 	/* margin: 0 5rem; */
     padding: 2rem 0.75rem;
 	border-radius: 0.25rem;
