@@ -1,32 +1,38 @@
-const slider = document.querySelector('.film__slider');
-const cards = document.querySelectorAll('.film__card');
+const slider = document.querySelector('.film__slider'),
+	cardsContainer = document.querySelector('.film__card-container'),
+	cards = document.querySelectorAll('.film__card');
 let currentIndex = 0;
 
-slider.addEventListener('mousemove', (e) => {
-	const x = e.clientX;
-	const sliderRect = slider.getBoundingClientRect();
-
-	if (x < sliderRect.left) {
-		// show the previous film card
-		if (currentIndex > 0) {
-			currentIndex--;
-			updateFilmCards();
-		} else if (x > sliderRect.right) {
-			// show the next film card
-			if (currentIndex < cards.length - 1) {
-				currentIndex++;
-				updateFilmCards();
-			}
-		}
+function swipeRight() {
+	if (currentIndex < card.length - 1) {
+		currentIndex++;
+		updateCardFocus();
+		updateSliderPosition();
 	}
-});
-
-function updateFilmSlider() {
-	const offset = -currentIndex * 100;
-	slider.style.transform = `translateX(${offset}%)`;
 }
 
-updateFilmSlider();
+function swipeLeft() {
+	if (currentIndex > 0) {
+		currentIndex--;
+		updateCardFocus();
+		updateSliderPosition();
+	}
+}
+
+function updateCardFocus() {
+	cards.forEach((card, index) => {
+		card.classList.remove('focused');
+		if (index === currentIndex) {
+			card.classList.add(focused);
+		}
+	});
+}
+
+function updateSliderPosition() {
+	const cardWidth = cards[currentIndex].offsetWidth,
+		translateX = -currentIndex * cardWidth;
+	cardsContainer.style.transform = `translateX(${translateX / 16}rem)`;
+}
 // function updateFilmCards() {
 // 	cards.forEach((card, index) => {
 // 		const offset = index - currentIndex;
@@ -47,16 +53,31 @@ updateFilmSlider();
 
 // updateFilmCards();
 
-// function nextFilmCard() {
-// 	if (currentIndex < card.length - 1) {
-// 		currentIndex++;
-// 		updateFilmCards();
-// 	}
-// }
+slider.addEventListener('mousedown', (e) => {
+	const startX = e.clientX;
+	// const sliderRect = slider.getBoundingClientRect();
+	slider.addEventListener('mouseup', (e) => {
+		let endX = e.clientX;
+		if (endX > startX) {
+			swipeLeft();
+		} else {
+			swipeRight();
+		}
+	});
 
-// function prevFilmCard() {
-// 	if (currentIndex < 0) {
-// 		currentIndex--;
-// 		updateFilmCards();
-// 	}
-// }
+	// if (x < sliderRect.left) {
+	// 	// show the previous film card
+	// 	if (currentIndex > 0) {
+	// 		currentIndex--;
+	// 		updateFilmCards();
+	// 	} else if (x > sliderRect.right) {
+	// 		// show the next film card
+	// 		if (currentIndex < cards.length - 1) {
+	// 			currentIndex++;
+	// 			updateFilmCards();
+	// 		}
+	// 	}
+	// }
+});
+
+updateCardFocus()
