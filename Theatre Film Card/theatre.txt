@@ -1,7 +1,0 @@
-trying to make a card slider that fills a card 
-on the whole screen
-want an animated transition on when someone slides
-to the next movie card
-add more films for the thrill of it
-
-my tmdb api key = '0e71702fa02bdd6d05fa9dc6d4f9cefb'
