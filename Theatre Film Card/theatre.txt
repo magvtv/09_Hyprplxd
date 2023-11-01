@@ -1,0 +1,4 @@
+trying to make a card slider that fills a card 
+on the whole screen
+want an animated transition on when someone slides
+to the next movie card
