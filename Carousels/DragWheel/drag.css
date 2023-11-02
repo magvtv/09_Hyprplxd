@@ -8,7 +8,7 @@
 	--x: calc(var(--active) * 800%);
 	--y: calc(var(--active) * 200%);
 	--rotate: calc(var(--active) * 120deg);
-	--opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+	--opacity: calc(var(--z-index) / var(--items) * 3 - 2);
 }
 
 body {
@@ -28,24 +28,26 @@ body {
 .carousel__item {
 	overflow: hidden;
 	position: absolute;
-	z-index: var(--zIndex);
+	z-index: var(--z-index);
 	width: var(--width);
 	height: var(--height);
 	margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
 	top: 50%;
 	left: 50%;
 	user-select: none;
-	transform-origin: 0 100%;
-	/* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
-	background: black;
+	transform-origin: 0% 100%;
+	box-shadow: rgba(0, 0, 0, 0.56) 0px 1.375rem 4.375 0.25rem;
+	background: burlywood;
 	pointer-events: all;
-	transform: translate(var(--x), var(--y)) rotate(var(--rot));
+	transform: translate(var(--x), var(--y)) rotate(var(--rotate));
 	transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
 	border-radius: 1rem;
 }
 
-.carousel__card {
+.carousel__item > .carousel__card {
 	position: absolute;
+	/* position: relative; */
+	display: flex;
 	z-index: 1;
 	top: 0;
 	left: 0;
@@ -55,7 +57,7 @@ body {
 	transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
 }
 
-.carousel__card::before {
+.carousel__item > .carousel__card::before {
 	content: '';
 	position: absolute;
 	z-index: 1;
@@ -65,14 +67,14 @@ body {
 	height: 100%;
 	background: linear-gradient(
 		to bottom,
-		rgba(0, 0, 0, 0.3),
-		rgba(0, 0, 0, 0) 32%,
-		rgba(0, 0, 0, 0) 50%,
-		rgba(0, 0, 0, 0.5)
+		rgba(31, 30, 30, 0.3),
+		rgba(10, 10, 10, 0) 32%,
+		rgba(12, 11, 11, 0) 50%,
+		rgba(10, 10, 10, 0.5)
 	);
 }
 
-.carousel__card > .title {
+.title {
 	position: absolute;
 	z-index: 1;
 	color: var(--text-color);
@@ -84,7 +86,7 @@ body {
 	text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
 }
 
-.carousel__card > .card__num {
+.card__num {
 	position: absolute;
 	z-index: 1;
 	color: var(--text-color);
@@ -94,7 +96,7 @@ body {
 	text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
 }
 
-.carousel__card > img {
+img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -109,23 +111,16 @@ body {
 	width: 2.5rem;
 	height: 2.5rem;
 	border-radius: 50%;
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 0.0625rem solid rgba(255, 255, 255, 0.2);
 	margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
 	transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
 	display: none;
 	pointer-events: none;
 }
 
-.cursor .cursor__two {
-	font-weight: inherit;
-	font-style: inherit;
-	size: 0.125rem;
-	transition-duration: .7s;
-}
 
 @media (pointer: fine) {
-    .cursor {
+	.cursor {
 		display: block;
 	}
-    
 }
