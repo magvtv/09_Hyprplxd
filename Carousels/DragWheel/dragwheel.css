@@ -2,7 +2,8 @@
 
 :root {
 	--items: 10;
-	--text-color: rgb(122, 243, 223);
+	--text-color: rgb(78, 134, 238);
+	--background: #0fa365;
 	--width: clamp(9.375rem, 30vw, 18.75rem);
 	--height: clamp(12.5rem, 40vw, 25rem);
 	--x: calc(var(--active) * 800%);
@@ -13,7 +14,7 @@
 
 body {
 	overflow: hidden;
-	background: linear-gradient(135deg, black, #003330);
+	background: linear-gradient(135deg, rgb(0, 0, 0), var(--background));
 	font-family: 'Aclonica', sans-serif;
 }
 
@@ -111,7 +112,7 @@ img {
 	width: 2.5rem;
 	height: 2.5rem;
 	border-radius: 50%;
-	border: 0.0625rem solid rgba(255, 255, 255, 0.2);
+	border: 0.125rem dotted var(--background);
 	margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
 	transition: transform 0.85s cubic-bezier(0, 0.02, 0, 1);
 	display: none;
