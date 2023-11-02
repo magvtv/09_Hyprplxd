@@ -1,27 +1,35 @@
-let progress = 50,
-	startX = 0,
-	active = 0,
-	isDown = false;
+/*--------------------
+Vars
+--------------------*/
+let progress = 50;
+let startX = 0;
+let active = 0;
+let isDown = false;
 
-const speedWheel = 0.025,
-	speedDrag = -0.075,
-	$items = document.querySelectorAll('.carousel__item'),
-	$cursor = document.querySelectorAll('.cursor');
-const getZIndex = (array, index) => {
-	array.map((_, i) => {
-		if (index === i) {
-			array.length;
-		} else {
-			array.length - Math.abs(index - i);
-		}
-	});
-};
+/*--------------------
+Contants
+--------------------*/
+const speedWheel = 0.02;
+const speedDrag = -0.1;
+
+/*--------------------
+Get Z
+--------------------*/
+const getZindex = (array, index) =>
+	array.map((_, i) => (index === i ? array.length : array.length - Math.abs(index - i)));
+
+/*--------------------
+Items
+--------------------*/
+const $items = document.querySelectorAll('.carousel-item');
+const $cursors = document.querySelectorAll('.cursor');
 
 const displayItems = (item, index, active) => {
-	const zIndex = getZIndex([...$items], active)[index];
+	const zIndex = getZindex([...$items], active)[index];
 	item.style.setProperty('--z-index', zIndex);
-	item.style.setPropert('--active', (index - active) / $items.length);
+	item.style.setProperty('--active', (index - active) / $items.length);
 };
+
 
 const animate = () => {
 	progress = Math.max(0, Math.min(progress, 100));
@@ -48,8 +56,8 @@ const handleWheel = (e) => {
 
 const handleMouseMove = (e) => {
 	if (e.type === 'mousemove') {
-		$cursor.forEach(($cursor) => {
-			$cursor.style.transform = `translate(${e.clientX/16}rem, ${e.clientY/16}rem)`;
+		$cursors.forEach(($cursor) => {
+			$cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 		});
 	}
 	if (!isDown) return;
@@ -68,7 +76,6 @@ const handleMouseDown = (e) => {
 const handleMouseUp = () => {
 	isDown = false;
 };
-
 
 document.addEventListener('mousewheel', handleWheel);
 document.addEventListener('mousedown', handleMouseDown);
