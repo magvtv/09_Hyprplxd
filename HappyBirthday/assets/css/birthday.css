@@ -18,87 +18,37 @@ body {
 }
 
 main {
-  width: 100%;
-  max-width: 62.5rem;
+  position: relative;
 }
 
-header {
-  background-image: url("./assets/images/pexels-rahib.jpg");
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 2rem;
-  padding: 3.125rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: grayscale(90%);
-  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.upper__header {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1.25rem;
-}
-
-.mini_title {
-  font-size: 1.125rem;
-  font-weight: bold;
-  letter-spacing: 0.25rem;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-.date__done {
+#preloader {
   display: flex;
   align-items: center;
-  opacity: 0.5;
-  font-size: 0.875rem;
-}
-.date__done #since-data {
-  display: inline-block;
-  padding-bottom: 0.125rem;
-}
-.date__done ion-icon {
-  font-size: 1.5rem;
-  margin-left: 0.625rem;
-}
-
-.lower__header {
-  padding-top: 3.125rem;
-}
-.lower__header .tags__container {
-  display: flex;
-  align-items: center;
-  opacity: 0.75;
-  margin-bottom: 0.75rem;
-}
-.lower__header .tags__container ion-icon {
-  font-size: 0.75rem;
-  width: 1.25rem;
-  margin-right: 0.625rem;
-}
-.lower__header .tags__container > span:not(:nth-child(2))::before {
-  content: ", ";
-}
-.lower__header span {
-  font-size: 0.875rem;
-  font-weight: bold;
-  text-transform: capitalize;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 1.1;
+  transition: opacity 2s ease-out;
 }
 
-.main__title {
-  margin: 1.25rem 0;
-  font-size: rem;
-  font-weight: bold;
-  opacity: 0.9;
+.screen_loader {
+  border: 0.75rem solid #C11ADB;
+  border-top: 0.75rem solid #FFC2D6;
+  border-radius: 50%;
+  width: 6.25rem;
+  height: 6.25rem;
+  animation: spin 3s linear infinite;
 }
 
-.sub__title {
-  width: 50%;
-  margin-top: 25rem;
-  opacity: 0.75;
-  line-height: 1.75;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=birthday.css.map */
