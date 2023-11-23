@@ -14,7 +14,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(to right bottom, #2a1f30 50%, #383d44 50%);
+	background: linear-gradient(to right bottom, #451763 50%, #A377CF 50%);
 }
 
 /* ====================================
@@ -363,7 +363,7 @@ p.paragraph_one, p.paragraph_two, p.paragraph_three {
 	width: 14px;
 	height: 14px;
 	display: inline-block;
-	background: #c5c3c6;
+	background: #c5c3c683;
 	opacity: 0.4;
 	border-radius: 50%;
 }
@@ -434,10 +434,10 @@ button.swiper-pagination-bullet {
 	top: 0;
 }
 .swiper-pagination-progress.swiper-pagination-white {
-	background: rgba(255, 255, 255, 0.5);
+	background: #b87be0bd;
 }
 .swiper-pagination-progress.swiper-pagination-white .swiper-pagination-progressbar {
-	background: #fff;
+	background: #b87be0bd;
 }
 .swiper-pagination-progress.swiper-pagination-black .swiper-pagination-progressbar {
 	background: #000;
